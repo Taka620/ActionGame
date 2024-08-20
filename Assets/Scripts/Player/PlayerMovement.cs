@@ -23,10 +23,12 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal") * Speed;
         if(verticalInput != 0 || horizontalInput != 0)
         {
+            /*
             if(!audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(moveSE);
             }
+            */
 
             playerAnimationManager.SetIsWalking(true);
             if(horizontalInput > 0)

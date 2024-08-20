@@ -7,6 +7,7 @@ public class EnemyStatus : MonoBehaviour
     public float OHP {get; private set;} = BOSSHORSEHP;
     private AudioSource audioSource;
     [SerializeField] private AudioClip takeDMG_SE;
+    [SerializeField] private AudioClip start_SE;
     private EnemyCooldown enemyCooldown;
 
     private void Start() 

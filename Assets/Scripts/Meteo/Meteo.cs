@@ -19,7 +19,7 @@ public class Meteo : MonoBehaviour
         lastTouch = 0;
         vfx.SetActive(false);
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(meteorSE);
+        //audioSource.PlayOneShot(meteorSE);
     }
     public void MeteoEnd()
     {
