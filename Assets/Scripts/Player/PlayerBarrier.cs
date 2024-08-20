@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBarrier : MonoBehaviour
 {
+    [SerializeField] private PopUpMessage popUpMessage;
     [SerializeField] private GameObject barrier;
     [SerializeField] private GameObject playerCollider;
     [SerializeField] private GameObject barrierR;
@@ -12,6 +13,7 @@ public class PlayerBarrier : MonoBehaviour
     private float lastBarrierTime;
     private float continueTime;
     private float cooltime;
+    private bool isPopUp;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class PlayerBarrier : MonoBehaviour
         lastBarrierTime = 0;
         continueTime = 1.8f;
         cooltime = 7.5f;
+        isPopUp = false;
     }
 
     private void Update() 
@@ -43,6 +46,7 @@ public class PlayerBarrier : MonoBehaviour
         canBarrier = false;
         barrierR.SetActive(canBarrier);
         barrierNR.SetActive(!canBarrier);
+        isPopUp = false;
 
     }
 
@@ -54,7 +58,11 @@ public class PlayerBarrier : MonoBehaviour
             canBarrier = true;
             barrierR.SetActive(canBarrier);
             barrierNR.SetActive(!canBarrier);
-
+            if (!isPopUp)
+            {
+              popUpMessage.PopBarrier();
+              isPopUp = true;
+            }
         }
 
         // 使用時間が過ぎた。

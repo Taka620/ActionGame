@@ -4,9 +4,7 @@ public class Player : MonoBehaviour
 {
     [Header("Scripts")]
     private PlayerMovement playerMovement;
-    private PlayerStatus playerStatus;
     private PlayerAttack playerAtack;
-    private SaberAnimationManager saberAnimationManager;
     [SerializeField] private AudioClip saberSE;
     [SerializeField] private AudioSource SaberAudioSource;
 
@@ -16,12 +14,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        playerStatus = GetComponent<PlayerStatus>();
         playerAtack = GetComponent<PlayerAttack>();
-    }
-
-    private void Start()
-    {
     }
 
     private void Update()

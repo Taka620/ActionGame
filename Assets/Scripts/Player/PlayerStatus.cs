@@ -10,6 +10,9 @@ public class PlayerStatus : MonoBehaviour
     private float flashTime; 
     private bool isTakeDamage;
 
+
+    [SerializeField] private PopUpMessage damagePop;
+
     private void Start() 
     {
         lastTime = 0;
@@ -21,6 +24,7 @@ public class PlayerStatus : MonoBehaviour
     public void TakeDamage(float demage)
     {
         HP -= demage;
+        damagePop.DmgPopUp();
         GameManager.Instance.UpdatePlayerHP();
         if(HP <= 0)
         {
